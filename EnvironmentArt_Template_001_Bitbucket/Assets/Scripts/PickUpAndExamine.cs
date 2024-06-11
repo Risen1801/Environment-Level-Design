@@ -1,6 +1,7 @@
-
+using Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
+using StarterAssets;
 
 public class PickUpAndExamine : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class PickUpAndExamine : MonoBehaviour
     private float targetFOV;
     private float baseFOV;
 
+    public StarterAssetsInputs starterAssetsInputs;
+
     // Use this for initialization
     void Start()
     {
@@ -31,6 +34,7 @@ public class PickUpAndExamine : MonoBehaviour
 
         // get the CharacterController of the parent object (player)
         myCharacterController = transform.parent.gameObject.GetComponent<CharacterController>();
+        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
@@ -125,7 +129,8 @@ public class PickUpAndExamine : MonoBehaviour
                 }
                 examiningObject = true;
                 myCharacterController.enabled = false;
-                GetComponent<ScriptMachine>().enabled = false;
+                //GetComponent<ScriptMachine>().enabled = false;
+                starterAssetsInputs.cursorInputForLook = false;
             }
         }
 
@@ -139,7 +144,8 @@ public class PickUpAndExamine : MonoBehaviour
                 hitObject.transform.position = handPosition.transform.position;
                 examiningObject = false;
                 myCharacterController.enabled = true;
-                GetComponent<ScriptMachine>().enabled = true;
+                //GetComponent<ScriptMachine>().enabled = true;
+                starterAssetsInputs.cursorInputForLook = true;
             }
         }
 
