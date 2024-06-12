@@ -7,6 +7,8 @@ TagManager:
   - Door
   - Key
   - LockedDoor
+  - CinemachineTarget
+  - Item
   layers:
   - Default
   - TransparentFX
