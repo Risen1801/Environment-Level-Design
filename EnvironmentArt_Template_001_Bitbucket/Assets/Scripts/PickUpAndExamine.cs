@@ -33,7 +33,7 @@ public class PickUpAndExamine : MonoBehaviour
         SetBaseFOV(GetComponent<Camera>().fieldOfView);
 
         // get the CharacterController of the parent object (player)
-        myCharacterController = transform.parent.gameObject.GetComponent<CharacterController>();
+        //myCharacterController = transform.parent.gameObject.GetComponent<CharacterController>();
         starterAssetsInputs = GetComponent<StarterAssetsInputs>();
     }
 
