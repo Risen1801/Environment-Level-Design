@@ -198,7 +198,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 1.02e-43, y: 4e-45, z: 8.8499e-41, w: 7.354e-41}
   m_UseBoundingSphereOverride: 0
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
@@ -331,6 +331,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 284249983471941763, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2197451307512226099, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2677287863529658556, guid: d8a1d537d66e2a34594b990ad95a5ee6,
         type: 3}
@@ -2078,10 +2088,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6681815997921797755, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7270220643759631409, guid: d8a1d537d66e2a34594b990ad95a5ee6,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7882759116922346143, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2497,6 +2517,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Horse With Cart (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 2789690825720229735, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3384417285923271125, guid: d8a1d537d66e2a34594b990ad95a5ee6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2545,6 +2570,11 @@ PrefabInstance:
     - target: {fileID: 3384417285923271125, guid: d8a1d537d66e2a34594b990ad95a5ee6,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042386429056295554, guid: d8a1d537d66e2a34594b990ad95a5ee6,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
