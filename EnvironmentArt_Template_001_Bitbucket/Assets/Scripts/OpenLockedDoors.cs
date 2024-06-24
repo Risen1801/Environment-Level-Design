@@ -56,6 +56,8 @@ public class OpenLockedDoors : MonoBehaviour
                            interactionPopupKeyNeeded.SetActive(false);
                            interactionPopupHasKey.SetActive(false);
                            _animator.SetBool("isOpen", true);
+                           GameObject.Destroy(interactionPopupKeyNeeded);
+                           GameObject.Destroy(interactionPopupHasKey);
                        }
                    }
                }

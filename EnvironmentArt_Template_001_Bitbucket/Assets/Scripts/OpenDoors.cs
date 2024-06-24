@@ -44,8 +44,8 @@ public class OpenDoors : MonoBehaviour
                 {
                     interactionPopup1.SetActive(false);
                     _animator.SetBool("isOpen", true);
+                    GameObject.Destroy(interactionPopup1);
                 }
-
             }
         }
         else
