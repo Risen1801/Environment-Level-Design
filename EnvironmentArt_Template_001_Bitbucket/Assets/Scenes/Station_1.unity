@@ -11740,8 +11740,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   interactionPopup2: {fileID: 2099206756}
---- !u!64 &1383816518
-MeshCollider:
+--- !u!136 &1383816518
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -11758,10 +11758,11 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 352dc60b32015b54cb25f91e8d076eac, type: 3}
+  serializedVersion: 2
+  m_Radius: 0.05
+  m_Height: 0.3
+  m_Direction: 1
+  m_Center: {x: -0.00000011931866, y: -0.0057715625, z: -0.0018348861}
 --- !u!1 &1386658552
 GameObject:
   m_ObjectHideFlags: 0
