@@ -12,8 +12,11 @@ public class OpenLockedDoors : MonoBehaviour
     public GameObject interactionPopupKeyNeeded;
     public GameObject interactionPopupHasKey;
 
+    private Animator _animator;
     private void Start()
     {
+        _animator = GetComponent<Animator>();
+
         // Stelle sicher, dass das Pop-up am Anfang deaktiviert ist
         if (interactionPopupKeyNeeded != null)
         {
@@ -52,7 +55,7 @@ public class OpenLockedDoors : MonoBehaviour
                        {
                            interactionPopupKeyNeeded.SetActive(false);
                            interactionPopupHasKey.SetActive(false);
-                           Destroy(hit.collider.gameObject);
+                           _animator.SetBool("isOpen", true);
                        }
                    }
                }

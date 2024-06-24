@@ -10,8 +10,12 @@ public class OpenDoors : MonoBehaviour
     public LayerMask interactableLayer;
     public GameObject interactionPopup1;
 
+    private Animator _animator;
+
     private void Start()
     {
+        _animator = GetComponent<Animator>();
+
         // Stelle sicher, dass das Pop-up am Anfang deaktiviert ist
         if (interactionPopup1 != null)
         {
@@ -39,7 +43,7 @@ public class OpenDoors : MonoBehaviour
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     interactionPopup1.SetActive(false);
-                    Destroy(hit.collider.gameObject);
+                    _animator.SetBool("isOpen", true);
                 }
 
             }
