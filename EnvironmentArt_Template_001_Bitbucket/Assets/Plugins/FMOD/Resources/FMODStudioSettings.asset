@@ -642,10 +642,10 @@ MonoBehaviour:
   StopEventsOutsideMaxDistance: 0
   BoltUnitOptionsBuildPending: 0
   EnableErrorCallback: 0
-  SharedLibraryUpdateStage: 0
+  SharedLibraryUpdateStage: 1
   SharedLibraryTimeSinceStart: 0
-  CurrentVersion: 131618
-  HideSetupWizard: 1
+  CurrentVersion: 131841
+  HideSetupWizard: 0
   LastEventReferenceScanVersion: 131618
   Platforms:
   - {fileID: -8277798598099210595}
