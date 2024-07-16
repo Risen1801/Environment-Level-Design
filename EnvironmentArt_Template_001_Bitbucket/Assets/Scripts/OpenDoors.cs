@@ -11,16 +11,20 @@ public class OpenDoors : MonoBehaviour
     public GameObject interactionPopup1;
 
     private Animator _animator;
+    private int _isOpenParameterHash;
+    private bool _isOpen;
 
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _isOpenParameterHash = Animator.StringToHash("isOpen");
 
         // Stelle sicher, dass das Pop-up am Anfang deaktiviert ist
         if (interactionPopup1 != null)
         {
             interactionPopup1.SetActive(false);
         }
+        Debug.Log("Animator and parameter hash initialized.");
     }
 
     void Update()
@@ -31,7 +35,7 @@ public class OpenDoors : MonoBehaviour
         {
 
             if (hit.collider.gameObject.CompareTag("Door"))
-            { 
+            {
 
                 // Zeige das Pop-up an
                 if (interactionPopup1 != null)
@@ -39,15 +43,29 @@ public class OpenDoors : MonoBehaviour
                     interactionPopup1.SetActive(true);
                 }
 
-                // Prüfe, ob der Spieler die Aufnahmetaste drückt
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    interactionPopup1.SetActive(false);
-                    _animator.SetBool("isOpen", true);
-                    GameObject.Destroy(interactionPopup1);
+                    Debug.Log("E key pressed. Current door state: " + _isOpen);
+                    if (!_isOpen)
+                    {
+                        Debug.Log("Opening door.");
+                        _animator.SetBool(_isOpenParameterHash, true);
+                        _isOpen = true;
+                    }
+
+                    else if (_isOpen)
+                    {
+                        Debug.Log("Closing door.");
+                        _animator.SetBool(_isOpenParameterHash, false);
+                        _isOpen = false;
+                    }
+
                 }
+
             }
+
         }
+
         else
         {
             // Verstecke das Pop-up, wenn der Spieler das Objekt nicht mehr anschaut
@@ -55,6 +73,9 @@ public class OpenDoors : MonoBehaviour
             {
                 interactionPopup1.SetActive(false);
             }
+
         }
+
     }
+
 }

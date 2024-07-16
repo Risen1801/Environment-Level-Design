@@ -13,9 +13,12 @@ public class OpenLockedDoors : MonoBehaviour
     public GameObject interactionPopupHasKey;
 
     private Animator _animator;
+    private int _isOpenParameterHash;
+    private bool _isOpen;
     private void Start()
     {
         _animator = GetComponent<Animator>();
+        _isOpenParameterHash = Animator.StringToHash("isOpen");
 
         // Stelle sicher, dass das Pop-up am Anfang deaktiviert ist
         if (interactionPopupKeyNeeded != null)
@@ -48,18 +51,30 @@ public class OpenLockedDoors : MonoBehaviour
                        interactionPopupHasKey.SetActive(true);
                    }
 
-                   // Prüfe, ob der Spieler die Aufnahmetaste drückt
-                   if (Input.GetKeyDown(KeyCode.E))
-                   {
-                       if (PlayerInventory.HasKey == true)
-                       {
-                           interactionPopupKeyNeeded.SetActive(false);
-                           interactionPopupHasKey.SetActive(false);
-                           _animator.SetBool("isOpen", true);
-                           GameObject.Destroy(interactionPopupKeyNeeded);
-                           GameObject.Destroy(interactionPopupHasKey);
-                       }
-                   }
+                // Prüfe, ob der Spieler die Aufnahmetaste drückt
+                    if (Input.GetKeyDown(KeyCode.E))
+                    {
+                    
+                        Debug.Log("E key pressed. Player has key: " + PlayerInventory.HasKey + ". Current door state: " + _isOpen);
+                        if (PlayerInventory.HasKey && !_isOpen)
+                        {
+                            Debug.Log("Opening locked door.");
+                            interactionPopupKeyNeeded.SetActive(false);
+                            interactionPopupHasKey.SetActive(false);
+                            _animator.SetBool(_isOpenParameterHash, true);
+                            _isOpen = true;
+                        }
+
+                        else if (PlayerInventory.HasKey && _isOpen)
+                        {
+                            Debug.Log("Closing locked door.");
+                            interactionPopupKeyNeeded.SetActive(false);
+                            interactionPopupHasKey.SetActive(false);
+                            _animator.SetBool(_isOpenParameterHash, false);
+                            _isOpen = false;
+                        }
+
+                    }                  
                }
            }
            else
