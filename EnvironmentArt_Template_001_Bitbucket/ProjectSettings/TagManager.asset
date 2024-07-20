@@ -9,6 +9,11 @@ TagManager:
   - LockedDoor
   - CinemachineTarget
   - Item
+  - Horse_1
+  - Horse_2
+  - Horse_3
+  - Horse_4
+  - Horse_5
   layers:
   - Default
   - TransparentFX
