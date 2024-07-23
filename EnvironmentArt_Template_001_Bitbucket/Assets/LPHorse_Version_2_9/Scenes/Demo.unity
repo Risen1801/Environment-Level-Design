@@ -1957,6 +1957,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: LP_Horse_Mesh_2_9_Brown_01 Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6274989720196817238, guid: 24a0fff7b6ace4643a22fe41f72cbc0f,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 134e60f3407e071408b4633d56154aa9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

@@ -2810,7 +2810,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!4 &1965837175040201725 stripped
 Transform:
@@ -3026,7 +3026,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!4 &7270220643759996881 stripped
 Transform:
@@ -3446,7 +3446,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1001 &5007842947784117103
 PrefabInstance:
@@ -3865,7 +3865,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!4 &75591475868356945 stripped
 Transform:
@@ -4215,7 +4215,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!4 &5426141835089560640 stripped
 Transform:
