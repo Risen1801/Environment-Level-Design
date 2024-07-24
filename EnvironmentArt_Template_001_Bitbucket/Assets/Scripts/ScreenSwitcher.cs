@@ -8,6 +8,20 @@ public class SceneSwitcher : MonoBehaviour
     // Name der Szene, zu der gewechselt werden soll
     public string sceneName;
 
+    FadeInOut fade;
+
+    private void Start()
+    {
+        fade = FindObjectOfType<FadeInOut>();
+    }
+
+    public IEnumerator ChangeScene()
+    {
+        fade.fadeIn = true;
+        yield return new WaitForSeconds(fade.TimeToFade);
+        SceneManager.LoadScene(sceneName);
+    }
+
     // Diese Methode wird aufgerufen, wenn ein anderes Collider-Objekt in den Trigger-Box-Collider eintritt
     private void OnTriggerEnter(Collider other)
     {
@@ -15,7 +29,7 @@ public class SceneSwitcher : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // Szene wechseln
-            SceneManager.LoadScene(sceneName);
+            StartCoroutine(ChangeScene());
         }
     }
 }
