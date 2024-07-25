@@ -6,8 +6,6 @@ public class CutSceneActivator : MonoBehaviour
 {
     public GameObject CutSceneObject;
     public GameObject PlayerObject;
-    public AudioSource AudioSource;
-    public AudioClip AudioClip;
     public GameObject InteractionPopUpWaiting;
     public GameObject Crosshair;
 
@@ -16,9 +14,6 @@ public class CutSceneActivator : MonoBehaviour
 
     void Start()
     {
-        AudioSource.clip = AudioClip;
-        AudioSource.playOnAwake = false;
-
         if (InteractionPopUpWaiting != null)
         {
             InteractionPopUpWaiting.SetActive(false);
@@ -51,7 +46,6 @@ public class CutSceneActivator : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            AudioSource.PlayOneShot(AudioClip);
             if (InteractionPopUpWaiting != null)
             {
                 InteractionPopUpWaiting.SetActive(true);
