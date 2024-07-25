@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class TeleporterHorses : MonoBehaviour
 {
     public Transform destination_Horse1;
     public Transform destination_Horse2;
