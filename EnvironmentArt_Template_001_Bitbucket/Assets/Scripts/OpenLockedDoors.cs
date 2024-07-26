@@ -11,14 +11,20 @@ public class OpenLockedDoors : MonoBehaviour
     public LayerMask interactableLayer;
     public GameObject interactionPopupKeyNeeded;
     public GameObject interactionPopupHasKey;
+    public AudioClip doorOpenSound;
+    public AudioClip doorCloseSound;
 
     private Animator _animator;
     private int _isOpenParameterHash;
     private bool _isOpen;
+    private GameObject _player;
+    private AudioSource _playerAudioSource;
     private void Start()
     {
         _animator = GetComponent<Animator>();
         _isOpenParameterHash = Animator.StringToHash("isOpen");
+        _player = GameObject.FindWithTag("Player");
+        _playerAudioSource = _player.GetComponent<AudioSource>();
 
         // Stelle sicher, dass das Pop-up am Anfang deaktiviert ist
         if (interactionPopupKeyNeeded != null)
@@ -63,6 +69,7 @@ public class OpenLockedDoors : MonoBehaviour
                             interactionPopupHasKey.SetActive(false);
                             _animator.SetBool(_isOpenParameterHash, true);
                             _isOpen = true;
+                            StartCoroutine(OpenDoor());
                         }
 
                         else if (PlayerInventory.HasKey && _isOpen)
@@ -72,6 +79,7 @@ public class OpenLockedDoors : MonoBehaviour
                             interactionPopupHasKey.SetActive(false);
                             _animator.SetBool(_isOpenParameterHash, false);
                             _isOpen = false;
+                            StartCoroutine(CloseDoor());
                         }
 
                     }                  
@@ -89,5 +97,17 @@ public class OpenLockedDoors : MonoBehaviour
                    interactionPopupHasKey.SetActive(false);
                }
            } 
+    }
+
+    public IEnumerator OpenDoor()
+    {
+        yield return new WaitForSeconds(1);
+        _playerAudioSource.PlayOneShot(doorOpenSound);
+    }
+
+    public IEnumerator CloseDoor()
+    {
+        yield return new WaitForSeconds(2);
+        _playerAudioSource.PlayOneShot(doorCloseSound);
     }
 }
