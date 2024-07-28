@@ -16,6 +16,7 @@ public class PickUpAndExamine : MonoBehaviour
 
     public GameObject handPosition;
     public GameObject examinePosition;
+    public GameObject ExaminPopup;
 
     public float thrust = 300f;
 
@@ -27,6 +28,7 @@ public class PickUpAndExamine : MonoBehaviour
 
     private GameObject _player;
     private StarterAssetsInputs _starterAssetsInputs;
+    private PickUpItem _pickUpItem;
 
     // Use this for initialization
     /*
@@ -208,6 +210,7 @@ public class PickUpAndExamine : MonoBehaviour
                             hitObject.transform.position = handPosition.transform.position;
                             hitObject.GetComponent<Rigidbody>().isKinematic = true;
                             objectIsPickedUp = true;
+                            ExaminPopup.SetActive(true);
                         }
                     }
                 }
@@ -255,6 +258,7 @@ public class PickUpAndExamine : MonoBehaviour
         hitObject.GetComponent<Rigidbody>().AddForce(transform.forward * thrust);
         hitObject = null;
         objectIsPickedUp = false;
+        ExaminPopup.SetActive(false);
     }
 
     private void StartExamining()
@@ -268,6 +272,7 @@ public class PickUpAndExamine : MonoBehaviour
         myCharacterController.enabled = false;
         _starterAssetsInputs.cursorInputForLook = false;
         _starterAssetsInputs.LookInput(Vector2.zero);
+        ExaminPopup.SetActive(false);
     }
 
     private void StopExamining()
@@ -276,6 +281,7 @@ public class PickUpAndExamine : MonoBehaviour
         examiningObject = false;
         myCharacterController.enabled = true;
         _starterAssetsInputs.cursorInputForLook = true;
+        ExaminPopup.SetActive(true);
     }
 
     private void UpdateZoom()
