@@ -25,7 +25,8 @@ public class PickUpAndExamine : MonoBehaviour
     private float targetFOV;
     private float baseFOV;
 
-    public StarterAssetsInputs starterAssetsInputs;
+    private GameObject _player;
+    private StarterAssetsInputs _starterAssetsInputs;
 
     // Use this for initialization
     void Start()
@@ -34,7 +35,8 @@ public class PickUpAndExamine : MonoBehaviour
 
         // get the CharacterController of the parent object (player)
         //myCharacterController = transform.parent.gameObject.GetComponent<CharacterController>();
-        starterAssetsInputs = GetComponent<StarterAssetsInputs>();
+        _player = GameObject.FindWithTag("Player");
+        _starterAssetsInputs = _player.GetComponent<StarterAssetsInputs>();
     }
 
     // Update is called once per frame
@@ -130,7 +132,8 @@ public class PickUpAndExamine : MonoBehaviour
                 examiningObject = true;
                 myCharacterController.enabled = false;
                 //GetComponent<ScriptMachine>().enabled = false;
-                starterAssetsInputs.cursorInputForLook = false;
+                _starterAssetsInputs.cursorInputForLook = false;
+                _starterAssetsInputs.LookInput(Vector2.zero);
             }
         }
 
@@ -145,7 +148,7 @@ public class PickUpAndExamine : MonoBehaviour
                 examiningObject = false;
                 myCharacterController.enabled = true;
                 //GetComponent<ScriptMachine>().enabled = true;
-                starterAssetsInputs.cursorInputForLook = true;
+                _starterAssetsInputs.cursorInputForLook = true;
             }
         }
 
